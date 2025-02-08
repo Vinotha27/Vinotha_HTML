@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart Replica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleLeftPanel() {
+            const leftPanel = document.getElementById('left-panel');
+            const arrow = document.getElementById('arrow');
+            const newScreen = document.getElementById('new-screen');
+
+            // Toggle the left panel width, arrow rotation, and show new screen
+            leftPanel.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-90');
+            newScreen.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <div class="flex flex-1 justify-between p-4 items-stretch">
+        <!-- Left Side Content -->
+        <div id="left-panel" class="flex-1 bg-gray-100 p-4 rounded-lg">
+            <!-- Add your flowchart here -->
+        </div>
+
+        <!-- Arrow to toggle the panel -->
+        <div class="flex flex-col items-center justify-center space-y-2 cursor-pointer" onclick="toggleLeftPanel()">
+            <div id="arrow" class="text-gray-600 transform transition-transform">
+                <!-- Three arrows stacked vertically -->
+                <span>&gt;</span>
+                <span>&gt;</span>
+                <span>&gt;</span>
+            </div>
+        </div>
+
+        <!-- Right Side UI -->
+        <div class="w-56 p-4 bg-gray-200 rounded-lg shadow-lg text-center space-y-2 h-full flex flex-col">
+            <img src="https://content.instructables.com/FJY/P3D2/IQ2MHT6J/FJYP3D2IQ2MHT6J.jpg?auto=webp" 
+                alt="AOS WCB Logo" class="mx-auto w-12">
+            <div class="font-bold text-sm">AOS WCB</div>
+            <div class="bg-red-500 text-white font-bold py-1 px-3 text-xs">DCR LOOPS</div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md text-xs flex-1">
+                <div class="font-bold">Technical Approval</div>
+                <div class="font-bold">XXX</div>
+                <div class="font-bold">Airworthiness Approval</div>
+                <div class="font-bold">XXX</div>
+                <div class="text-lg font-bold">Total</div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md text-xs flex-1">
+                <div class="text-xl font-bold">1659</div>
+                <p class="text-xs">In Progress Service Bulletin</p>
+                <div class="text-lg font-bold mt-1">1197</div>
+                <p class="text-xs">Validated Service Bulletin</p>
+                <p class="font-bold mt-2">On Time Delivery (%)</p>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md text-xs flex-1">
+                <div class="text-xl font-bold">XX %</div>
+                <p class="text-xs">Global OTD</p>
+                
+                <div class="grid grid-cols-3 gap-2 text-xs">
+                    <span class="font-bold">A</span>
+                    <span>XX%</span>
+                    <span>Auth.SB</span>
+            
+                    <span class="font-bold">B</span>
+                    <span>XX%</span>
+                    <span>TA</span>
+            
+                    <span class="font-bold">C</span>
+                    <span>XX%</span>
+                    <span>A4</span>
+                </div>
+                <p class="font-bold mt-2">GLOBAL LEAD TIME</p>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg shadow-md text-xs flex-1">
+                <p class="text-lg font-bold">176 days <span class="font-semibold">(88%)</span></p>
+                <p class="text-xs">on average from SBO validation to Airworthiness approval end</p>
+                <p class="text-lg font-bold mt-2">155 days</p>
+                <p class="text-xs">on average from SB creation to</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Screen Section (Initially Hidden) -->
+    <div id="new-screen" class="hidden p-4 bg-white rounded-lg shadow-lg w-full h-full flex justify-center items-center">
+        <div class="text-left">
+            <h2 class="font-bold text-xl mb-4">Choose an Option</h2>
+            <label for="option1" class="block text-sm">Option 1</label>
+            <input type="radio" id="option1" name="options" class="mr-2">
+            <label for="option2" class="block text-sm mt-2">Option 2</label>
+            <input type="radio" id="option2" name="options" class="mr-2">
+        </div>
+    </div>
+
+    <!-- Footer Section (Aligned Properly) -->
+    <footer class="w-full bg-gray-50 p-2 shadow-lg mt-auto">
+        <div class="bg-white p-2 rounded-lg shadow-md">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h2 class="text-lg font-bold text-red-600">IN PROGRESS | SB Creation Date: ** to **</h2>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Vol:</span>
+                <span class="text-red-600 whitespace-nowrap">| 194 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 267 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 86 |</span>
+                <span class="text-gray-500 whitespace-nowrap">| XX |</span>
+                <span class="text-red-600 whitespace-nowrap">| 662 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 328 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 0 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 13 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 72 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 37 |</span>
+                <span class="text-red-600 whitespace-nowrap">| 0 |</span>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Age at work (days):</span>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Average</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 331 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 329 |</span>
+                <span class="text-gray-500 whitespace-nowrap">| XX |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 695 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 330 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 250 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 133 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 229 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Max</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 3616 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 4265 |</span>
+                <span class="text-gray-500 whitespace-nowrap">| XX |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 3259 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 3459 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 1981 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 802 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 2522 |</span>
+                <span class="text-red-800 font-bold whitespace-nowrap">| 0 |</span>
+            </div>
+        </div>
+    
+        <div class="bg-white p-2 rounded-lg shadow-md">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h2 class="text-lg font-bold text-blue-600">COMPLETED | SB Dispatched Date: ** to **</h2>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Vol:</span>
+                <span class="text-blue-600 whitespace-nowrap">| XX |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| XX |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-600 whitespace-nowrap">| 2097 |</span>
+            </div>
+    
+            <div class="mt-2 grid grid-cols-10 gap-px text-center text-[10px]">
+                <span class="font-bold text-gray-700 whitespace-nowrap">Lead time (days):</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 176 |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 88% |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 155 |</span>
+                <span class="text-gray-500 whitespace-nowrap">| XX |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 2097 |</span>
+                <span class="text-blue-800 font-bold whitespace-nowrap">| 2097 |</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
