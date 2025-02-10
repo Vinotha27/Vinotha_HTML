@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowchart Replica</title>
+    <title>Skywise Flowchart</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       function toggleLeftPanel() {
@@ -11,16 +11,27 @@
           const arrow = document.getElementById('arrow');
   
           if (leftPanel.classList.contains('hidden')) {
-              leftPanel.classList.remove('hidden'); // Show the panel
-              leftPanel.classList.add('w-1/4'); // Expand width
-              arrow.innerHTML = "&lt;&lt;&lt;"; // Change arrow direction
+              leftPanel.classList.remove('hidden'); 
+              leftPanel.classList.add('w-1/4'); 
+              arrow.innerHTML = "&lt;&lt;&lt;"; 
           } else {
-              leftPanel.classList.remove('w-1/4'); // Remove width
-              leftPanel.classList.add('hidden'); // Hide panel
-              arrow.innerHTML = "&gt;&gt;&gt;"; // Reset arrow direction
+              leftPanel.classList.remove('w-1/4'); 
+              leftPanel.classList.add('hidden'); 
+              arrow.innerHTML = "&gt;&gt;&gt;"; 
           }
       }
   </script>
+  <style>
+    header {
+        border-radius: 0 !important; 
+        box-shadow: none !important; 
+        overflow: hidden; 
+    }
+
+    header img, header .skywise {
+        border-radius: 0 !important; 
+    }
+  </style>
   <style>
     body {
       display: flex;
@@ -49,13 +60,13 @@
     }
 
     .skywise {
-      background-color: #7d1c4e; /* Deep blue */
+      background-color: #cd119e; 
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
     }
 
     .service-bulletin {
-      background-color: #7d1c4e; /* Deep purple */
+      background-color: #7000e1; 
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
     }
@@ -63,30 +74,30 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50">
   
-  <!-- Header (Centered and at the Top) -->
-  <header class="w-full p-4 shadow-md flex flex-col fixed top-0 left-0">
-    <div class="w-full flex items-center justify-between p-2">
-      <div class="text-black font-bold text-lg skywise">
-        Skywise. <span class="text-gray-700 font-normal">Service bulletin WCB</span>
-      </div>
+  <!-- Header  -->
+  <header class="w-full p-4 flex flex-col fixed top-0 left-0 border-none rounded-none shadow-none">
+    <div class="w-full flex items-center justify-start p-2"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfih9C_6u6zhOYiluFtAvPH5-yLhRWPmMERQ&s" alt="Skywise Logo" class="w-34 h-12"> 
+        <div class="text-black font-bold text-lg skywise">
+            <span class="text-white font-normal">Service</span>
+            <span class="text-white font-normal">bulletin WCB</span>
+        </div>
     </div>
     <div class="w-full flex justify-center mt-4">
-      <h1 class="text-xl font-bold text-gray-700">E2E SERVICE BULLETIN PROCESS</h1>
+      <h1 class="text-xl font-bold text-black-300">E2E SERVICE BULLETIN PROCESS</h1>
     </div>
   </header>
   <!-- Push Content Below Header -->
   <div class="mt-16 flex flex-grow">
     <!-- Arrow Toggle -->
-    <div class="flex items-center justify-center w-8 h-8 bg-gray-100 cursor-pointer fixed top-1/2 left-0 transform -translate-y-1/2 ml-4" onclick="toggleLeftPanel()">
-        <div id="arrow" class="text-pink-500 text-lg flex flex-col items-center justify-center">
-            <!-- Arrow Icon stacked -->
-            <span>&gt;</span>
-            <span>&gt;</span>
-            <span>&gt;</span>
-        </div>
+<div class="flex items-center justify-center w-6 h-6 bg-gray-100 cursor-pointer fixed top-1/2 left-0 transform -translate-y-1/2 ml-2" onclick="toggleLeftPanel()">
+    <div id="arrow" class="text-pink-500 text-sm flex flex-col items-center justify-center">
+        <!-- Arrow Icon stacked -->
+        <span>&gt;</span>
+        <span>&gt;</span>
+        <span>&gt;</span>
     </div>
-    
-    
+</div>
     <!-- Left Panel (Expandable) -->
      
     <div id="left-panel" class="hidden bg-gray-100 transition-all duration-300 flex flex-col">
@@ -98,25 +109,25 @@
               <div>
                 <label for="creation-date" class="block font-medium mb-1">Creation Date</label>
                 <div class="flex items-center space-x-2">
-                  <input type="date" id="creation-date-start" class="w-full p-2 border border-gray-300 rounded-md" />
+                  <input type="date" id="creation-date-start" class="w-1/2 p-1 border border-gray-300 rounded-md" />
                   <span class="text-gray-500">→</span>
-                  <input type="date" id="creation-date-end" class="w-full p-2 border border-gray-300 rounded-md" />
+                  <input type="date" id="creation-date-end" class="w-1/2 p-1 border border-gray-300 rounded-md" />
                 </div>
               </div>
       
               <div>
                 <label for="dispatched-date" class="block font-medium mb-1">Dispatched Date</label>
                 <div class="flex items-center space-x-2">
-                  <input type="date" id="dispatched-date-start" class="w-full p-2 border border-gray-300 rounded-md" />
+                  <input type="date" id="dispatched-date-start" class="w-1/2 p-1 border border-gray-300 rounded-md" />
                   <span class="text-gray-500">→</span>
-                  <input type="date" id="dispatched-date-end" class="w-full p-2 border border-gray-300 rounded-md" />
+                  <input type="date" id="dispatched-date-end" class="w-1/2 p-1 border border-gray-300 rounded-md" />
                 </div>
               </div>
       
               <div class="flex justify-start">
                 <div>
                   <label for="sb-type" class="block font-medium mb-1">SB Type</label>
-                  <select id="sb-type" class="w-full p-2 border border-gray-300 rounded-md">
+                  <select id="sb-type" class="w-full p-3 border border-gray-300 rounded-md">
                     <option value="">Select</option>
                   </select>
                 </div>
@@ -125,39 +136,39 @@
       
               <div>
                 <label for="sb-technical-domain" class="block font-medium mb-1">SB Technical Domain</label>
-                <input type="text" id="sb-technical-domain" class="w-full p-2 border border-gray-300 rounded-md" />
+                <input type="text" id="sb-technical-domain" class="w-1/2 p-1 border border-gray-300 rounded-md" />
               </div>
       
               <div>
                 <label for="cluster-ata" class="block font-medium mb-1">Cluster per ATA</label>
-                <input type="text" id="cluster-ata" class="w-full p-2 border border-gray-300 rounded-md bg-gray-100" disabled placeholder="Not Editable" />
+                <input type="text" id="cluster-ata" class="w-1/2 p-1 border border-gray-300 rounded-md bg-gray-100" disabled placeholder="Not Editable" />
               </div>
       
               <div>
-                <label for="to-origin" class="block font-medium mb-1">TO Origin</label>
-                <input type="text" id="to-origin" class="w-full p-2 border border-gray-300 rounded-md bg-gray-100" disabled placeholder="Not Editable" />
+                <label for="to-origin" class="block font-medium mb-1">To Origin</label>
+                <input type="text" id="to-origin" class="w-1/2 p-1 border border-gray-300 rounded-md bg-gray-100" disabled placeholder="Not Editable" />
               </div>
       
               <div>
                 <label for="sb-ref" class="block font-medium mb-1">SB Ref</label>
-                <input type="text" id="sb-ref" class="w-full p-2 border border-gray-300 rounded-md" />
+                <input type="text" id="sb-ref" class="w-1/2 p-1 border border-gray-300 rounded-md" />
               </div>
       
               <div>
                 <label for="sb-new-rev" class="block font-medium mb-1">SB New / Rev</label>
-                <select id="sb-new-rev" class="w-full p-2 border border-gray-300 rounded-md">
+                <select id="sb-new-rev" class="w-1/2 p-1 border border-gray-300 rounded-md">
                   <option value="">Select</option>
                 </select>
               </div>
       
               <div>
                 <label for="ac-program" class="block font-medium mb-1">A/C Program (Letter)</label>
-                <input type="text" id="ac-program" class="w-full p-2 border border-gray-300 rounded-md" />
+                <input type="text" id="ac-program" class="w-1/2 p-1 border border-gray-300 rounded-md" />
               </div>
       
               <div>
                 <label for="compliance" class="block font-medium mb-1">Compliance</label>
-                <input type="text" id="compliance" class="w-full p-2 border border-gray-300 rounded-md" />
+                <input type="text" id="compliance" class="w-1/2 p-1 border border-gray-300 rounded-md" />
               </div>
             </form>
           </div>
@@ -175,8 +186,10 @@
         </div>
     </div>
     <!-- Add this section above the footer -->
-    <div class="flex justify-center items-center w-full pb-4">
-        <div class="flex flex-col items-center justify-between w-32 h-48 bg-gray-200 border-2 border-gray-600 rounded-md p-2 shadow-md">
+    <div class="flex justify-start items-center
+    .
+     w-full pb-4">
+        <div class="flex flex-col items-center justify-between w-18 h-48 bg-gray-200 border-2 border-gray-600 rounded-md p-2 shadow-md">
           <div class="text-sm font-bold text-gray-700 text-left">Select</div> 
             <!-- Image at the Bottom -->
             <img src="https://cdn.vectorstock.com/i/1000v/62/16/check-mark-black-tick-verified-badge-icon-vector-48766216.jpg" 
